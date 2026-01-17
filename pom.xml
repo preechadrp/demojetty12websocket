@@ -8,23 +8,10 @@
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <jetty-version>12.0.29</jetty-version>
+        <jetty-version>12.0.30</jetty-version>
     </properties>
 
     <dependencies>
-
-		<dependency>
-			<groupId>org.eclipse.jetty.ee10</groupId>
-			<artifactId>jetty-ee10-webapp</artifactId>
-			<version>${jetty-version}</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.eclipse.jetty.ee10/jetty-ee10-apache-jsp -->
-		<dependency>
-		    <groupId>org.eclipse.jetty.ee10</groupId>
-		    <artifactId>jetty-ee10-apache-jsp</artifactId>
-		    <version>${jetty-version}</version>
-		</dependency>
 		
 		<!-- WebSocket support -->
        	<!-- https://mvnrepository.com/artifact/org.eclipse.jetty.ee10.websocket/jetty-ee10-websocket-jakarta-server -->
@@ -32,6 +19,12 @@
 		    <groupId>org.eclipse.jetty.ee10.websocket</groupId>
 		    <artifactId>jetty-ee10-websocket-jakarta-server</artifactId>
 		    <version>${jetty-version}</version>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>org.eclipse.jetty.ee10</groupId>
+		    		<artifactId>jetty-ee10-annotations</artifactId>
+		    	</exclusion>
+		    </exclusions>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
