@@ -15,6 +15,26 @@
   }
 }
 
+ตัวอย่าง reflection-config.json
+[
+  {
+    "name": "com.example.zk.Index",   <-- class ที่ zul อ้างอิงด้วยคำสั่ง apply
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  }
+]
+หรืออย่างน้อย
+[
+  {
+    "name": "com.example.zk.Index",
+    "constructors": [
+      { "parameterTypes": [] }
+    ]
+  }
+]
+
+
 เหตุผล:
 Native image ไม่มี real URL filesystem
 classpath resource ไม่ map เป็น directory จริง
