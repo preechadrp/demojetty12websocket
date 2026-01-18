@@ -1,16 +1,16 @@
 -jetty 12.0.x
 -web socket แบบไม่ใช้ annotaion ทำแบบ programmatic เพื่อให้รองรับ graalVM
--webapp directory ต้องอยู่ข้างนอก ช่วยเรื่องตอนใช้ graalVM
+-appResources directory ต้องอยู่ข้างนอก ช่วยเรื่องตอนใช้ graalVM
 -logback.xml อยู่ข้างในได้เพราะ realonly file แต่ห้ามใช้ option scanfile
  และเพิ่ม resource-config.json ตอนใช้ graalVM
- หากใช้ scanfile ต้องเอาออกมาข้างนอกแบบ webapp directory
+ หากใช้ scanfile ต้องเอาออกมาข้างนอกแบบ appResources directory
  
  
  ตัวอย่าง resource-config.json
  {
   "resources": {
     "includes": [
-      { "pattern": "webapp/.*" }
+      { "pattern": "appResources/.*" }
     ]
   }
 }
