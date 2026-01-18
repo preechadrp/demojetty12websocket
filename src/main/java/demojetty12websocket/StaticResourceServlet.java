@@ -26,7 +26,7 @@ public class StaticResourceServlet extends HttpServlet {
 			return;
 		}
 
-		String resourcePath = "/webapp" + path;
+		String resourcePath = "/appResources" + path;
 
 		try (InputStream is = getClass().getResourceAsStream(resourcePath)) {
 			if (is == null) {
@@ -34,7 +34,7 @@ public class StaticResourceServlet extends HttpServlet {
 				return;
 			}
 
-			resp.setContentType(guessContentType(path));
+			resp.setContentType(guessContentType(path.toLowerCase()));
 			is.transferTo(resp.getOutputStream());
 		}
 	}
