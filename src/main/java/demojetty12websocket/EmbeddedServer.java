@@ -33,8 +33,6 @@ public class EmbeddedServer {
 		server.setHandler(context);
 		server.setStopTimeout(60000);
 		server.setStopAtShutdown(true);
-
-		// 3. เริ่มต้น Server และ Broadcast จำลอง
 		server.start();
 
 		// ตัวอย่างการ Broadcast จาก Server (เหมือนเดิม)
